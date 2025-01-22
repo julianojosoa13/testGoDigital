@@ -1,101 +1,94 @@
-import Image from "next/image";
+"use client";
+import EditProduct from "@/components/dialog/EditProduct";
+import Button from "@/components/ui/Button";
+import ProductList from "@/components/ProductList";
+import {
+  addProduct,
+  deleteProduct,
+  getAllProducts,
+} from "@/lib/firebase.actions";
+import { useState, useEffect } from "react";
+
+interface Product {
+  id: string;
+  code: string;
+  name: string;
+  quantity: number;
+  isActive?: boolean;
+}
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [editProduct, setEditProduct] = useState<Product | null>(null);
+  const [products, setProducts] = useState<Product[]>([]);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+  // Fetch products from the database
+  const fetchProducts = async () => {
+    const fetchedProducts = await getAllProducts();
+    const activeProducts = fetchedProducts.filter(
+      (product: Product) => product.isActive !== false
+    ); // Filter for active products only
+    setProducts(activeProducts);
+  };
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  const handleSave = async (product: Product) => {
+    if (editProduct) {
+      // Update product logic
+      const updatedProduct = { ...editProduct, ...product };
+      await addProduct(updatedProduct); // Assuming `addProduct` also updates when `id` exists
+    } else {
+      // Add new product logic
+      const newProduct = { ...product, isActive: true };
+      await addProduct(newProduct);
+    }
+    setModalOpen(false);
+    setEditProduct(null);
+    await fetchProducts(); // Refresh the product list after saving
+  };
+
+  const handleEdit = (product: Product) => {
+    setEditProduct(product);
+    setModalOpen(true);
+  };
+
+  const handleDelete = async (productId: string) => {
+    await deleteProduct(productId); // Mark product as inactive
+    await fetchProducts(); // Refresh product list after deletion
+  };
+
+  return (
+    <div>
+      <main className="flex flex-1 w-screen h-screen flex-col">
+        <h1 className="text-center font-bold text-3xl">GoPharma</h1>
+        <div className="p-4 rounded-md border-solid border-1 bg-slate-100 m-4 flex flex-1 flex-col gap-4">
+          <h2 className="text-lg font-semibold text-yellow-500">Bienvenue</h2>
+          <Button
+            title="Nouveau ➕"
+            onClick={() => {
+              setEditProduct(null); // Reset to null for new product
+              setModalOpen(true);
+            }}
+            type="primary"
+          />
+          <ProductList
+            products={products}
+            onEdit={handleEdit}
+            onDelete={handleDelete}
+          />
+          {isModalOpen && (
+            <EditProduct
+              action={editProduct ? "modifier" : "nouveau"}
+              product={editProduct || undefined}
+              onSave={(product: Product) => handleSave(product)}
+              onClose={() => setModalOpen(false)}
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+          )}
         </div>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
     </div>
   );
 }
