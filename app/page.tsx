@@ -50,53 +50,52 @@ export default function Home() {
       const addedProduct = await addProduct(newProduct);
       setModalOpen(false);
       setEditProduct(null);
-
-      console.log("Fetching products...");
-      await fetchProducts();
     }
-
-    const handleEdit = (product: Product) => {
-      console.log(">> Editing product...", product);
-      setEditProduct(product);
-      setModalOpen(true);
-    };
-
-    const handleDelete = async (productId: string) => {
-      await deleteProduct(productId);
-      await fetchProducts();
-    };
-
-    return (
-      <div>
-        <main className="flex flex-1 w-screen h-screen flex-col">
-          <h1 className="text-center font-bold text-3xl">GoPharma</h1>
-          <div className="p-4 rounded-md border-solid border-1 bg-slate-100 m-4 flex flex-1 flex-col gap-4">
-            <h2 className="text-lg font-semibold text-yellow-500">Bienvenue</h2>
-            <Button
-              title="Nouveau ➕"
-              onClick={() => {
-                setEditProduct(null);
-                setModalOpen(true);
-                console.log("Nouveau produit >> ", editProduct);
-              }}
-              type="primary"
-            />
-            <ProductList
-              products={products}
-              onEdit={handleEdit}
-              onDelete={handleDelete}
-            />
-            {isModalOpen && (
-              <EditProduct
-                action={editProduct ? "modifier" : "nouveau"}
-                product={editProduct || undefined}
-                onSave={(product: Product) => handleSave(product)}
-                onClose={() => setModalOpen(false)}
-              />
-            )}
-          </div>
-        </main>
-      </div>
-    );
+    console.log("Fetching products...");
+    await fetchProducts();
   };
+
+  const handleEdit = (product: Product) => {
+    console.log(">> Editing product...", product);
+    setEditProduct(product);
+    setModalOpen(true);
+  };
+
+  const handleDelete = async (productId: string) => {
+    await deleteProduct(productId);
+    await fetchProducts();
+  };
+
+  return (
+    <div>
+      <main className="flex flex-1 w-screen h-screen flex-col">
+        <h1 className="text-center font-bold text-3xl">GoPharma</h1>
+        <div className="p-4 rounded-md border-solid border-1 bg-slate-100 m-4 flex flex-1 flex-col gap-4">
+          <h2 className="text-lg font-semibold text-yellow-500">Bienvenue</h2>
+          <Button
+            title="Nouveau ➕"
+            onClick={() => {
+              setEditProduct(null);
+              setModalOpen(true);
+              console.log("Nouveau produit >> ", editProduct);
+            }}
+            type="primary"
+          />
+          <ProductList
+            products={products}
+            onEdit={handleEdit}
+            onDelete={handleDelete}
+          />
+          {isModalOpen && (
+            <EditProduct
+              action={editProduct ? "modifier" : "nouveau"}
+              product={editProduct || undefined}
+              onSave={(product: Product) => handleSave(product)}
+              onClose={() => setModalOpen(false)}
+            />
+          )}
+        </div>
+      </main>
+    </div>
+  );
 }

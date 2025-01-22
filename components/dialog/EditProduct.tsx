@@ -1,4 +1,4 @@
-import React, { JSX, useState } from "react";
+import React, { useState } from "react";
 import Button from "@/components/ui/Button";
 
 interface Product {
@@ -12,7 +12,7 @@ interface ModalProps {
   action: "nouveau" | "modifier";
   product?: Product;
   onClose: () => void;
-  onSave: (data: Product) => Promise<JSX.Element>;
+  onSave: (data: Product) => Promise<void>;
 }
 
 const EditProduct: React.FC<ModalProps> = ({
