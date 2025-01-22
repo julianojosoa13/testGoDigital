@@ -32,7 +32,7 @@ const ProductList: React.FC<ProductListProps> = ({
   };
 
   return (
-    <table className="table-auto w-full border-collapse border border-gray-300">
+    <table className="table-auto w-full border-collapse border border-gray-300 ">
       <thead>
         <tr className="bg-gray-200">
           <th className="border border-gray-300 px-4 py-2">Code</th>

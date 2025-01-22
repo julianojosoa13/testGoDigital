@@ -81,11 +81,13 @@ export default function Home() {
             }}
             type="primary"
           />
-          <ProductList
-            products={products}
-            onEdit={handleEdit}
-            onDelete={handleDelete}
-          />
+          <div className="2xl:px-[10vw] py-4">
+            <ProductList
+              products={products}
+              onEdit={handleEdit}
+              onDelete={handleDelete}
+            />
+          </div>
           {isModalOpen && (
             <EditProduct
               action={editProduct ? "modifier" : "nouveau"}
