@@ -42,7 +42,7 @@ const EditProduct: React.FC<ModalProps> = ({
     setQuantity((prev) => Math.max(0, prev + delta));
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (action === "nouveau" || (action === "modifier" && !isUnchanged)) {
       const newProduct = {
@@ -120,7 +120,9 @@ const EditProduct: React.FC<ModalProps> = ({
             <Button
               title={action === "nouveau" ? "Ajouter" : "Enregistrer"}
               type="primary"
-              onClick={handleSubmit}
+              onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
+                handleSubmit(e)
+              }
               //  disabled={action === "modifier" && isUnchanged}
             />
           </div>

@@ -47,7 +47,7 @@ export default function Home() {
     } else {
       console.log("Ajout nouvouea produit", { ...product, isActive: true });
       const newProduct = { ...product, isActive: true };
-      const addedProduct = await addProduct(newProduct);
+      await addProduct(newProduct);
     }
     setModalOpen(false);
     setEditProduct(null);

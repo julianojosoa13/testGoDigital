@@ -65,12 +65,13 @@ export const deleteProduct = async (id: string): Promise<void> => {
   }
 };
 
-export const getAllProducts = async () => {
-  const products: any[] = [];
+export const getAllProducts = async (): Promise<Product[]> => {
+  const products: Product[] = [];
   try {
     const querySnapshot = await getDocs(collection(db, "Medicament"));
     querySnapshot.forEach((doc) => {
-      products.push({ id: doc.id, ...doc.data() });
+      const data = doc.data();
+      products.push({ ...(data as Product) });
     });
     return products;
   } catch (error) {

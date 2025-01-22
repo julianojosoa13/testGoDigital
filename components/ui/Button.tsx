@@ -3,7 +3,7 @@
 import React from "react";
 
 interface ButtonProps {
-  onClick: (e: any) => void;
+  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
   title: string;
   type: "primary" | "secondary";
 }
@@ -17,7 +17,7 @@ const Button: React.FC<ButtonProps> = ({ onClick, title, type }) => {
 
   return (
     <button
-      onClick={(e: any) => onClick(e)}
+      onClick={(e: React.MouseEvent<HTMLButtonElement>) => onClick(e)}
       className={`${baseStyles} ${buttonStyles} h-11 w-52`}
     >
       {title}

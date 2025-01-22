@@ -1,36 +1,36 @@
-[debug] [2025-01-22T14:54:28.184Z] ----------------------------------------------------------------------
-[debug] [2025-01-22T14:54:28.186Z] Command:       /usr/bin/node /usr/local/bin/firebase deploy
-[debug] [2025-01-22T14:54:28.186Z] CLI Version:   13.29.1
-[debug] [2025-01-22T14:54:28.186Z] Platform:      linux
-[debug] [2025-01-22T14:54:28.186Z] Node Version:  v18.19.1
-[debug] [2025-01-22T14:54:28.187Z] Time:          Wed Jan 22 2025 17:54:28 GMT+0300 (East Africa Time)
-[debug] [2025-01-22T14:54:28.187Z] ----------------------------------------------------------------------
+[debug] [2025-01-22T17:59:51.494Z] ----------------------------------------------------------------------
+[debug] [2025-01-22T17:59:51.496Z] Command:       /usr/bin/node /usr/local/bin/firebase deploy
+[debug] [2025-01-22T17:59:51.496Z] CLI Version:   13.29.1
+[debug] [2025-01-22T17:59:51.497Z] Platform:      linux
+[debug] [2025-01-22T17:59:51.497Z] Node Version:  v18.19.1
+[debug] [2025-01-22T17:59:51.497Z] Time:          Wed Jan 22 2025 20:59:51 GMT+0300 (East Africa Time)
+[debug] [2025-01-22T17:59:51.497Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2025-01-22T14:54:28.241Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2025-01-22T14:54:28.241Z] > authorizing via signed-in user (josoajuliano@gmail.com)
-[debug] [2025-01-22T14:54:28.241Z] [iam] checking project gopharma-230d7 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
-[debug] [2025-01-22T14:54:28.242Z] Checked if tokens are valid: true, expires at: 1737560950623
-[debug] [2025-01-22T14:54:28.242Z] Checked if tokens are valid: true, expires at: 1737560950623
-[debug] [2025-01-22T14:54:28.243Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/gopharma-230d7:testIamPermissions [none]
-[debug] [2025-01-22T14:54:28.243Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/gopharma-230d7:testIamPermissions x-goog-quota-user=projects/gopharma-230d7
-[debug] [2025-01-22T14:54:28.244Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gopharma-230d7:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
-[debug] [2025-01-22T14:54:30.283Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/gopharma-230d7:testIamPermissions 200
-[debug] [2025-01-22T14:54:30.283Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gopharma-230d7:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
-[debug] [2025-01-22T14:54:30.283Z] Checked if tokens are valid: true, expires at: 1737560950623
-[debug] [2025-01-22T14:54:30.284Z] Checked if tokens are valid: true, expires at: 1737560950623
-[debug] [2025-01-22T14:54:30.284Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/gopharma-230d7 [none]
-[debug] [2025-01-22T14:54:30.973Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/gopharma-230d7 200
-[debug] [2025-01-22T14:54:30.973Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/gopharma-230d7 {"projectId":"gopharma-230d7","projectNumber":"193172513145","displayName":"GoPharma","name":"projects/gopharma-230d7","resources":{"hostingSite":"gopharma-230d7"},"state":"ACTIVE","etag":"1_d945099e-00d4-40b6-9296-edc342b143c8"}
-[debug] [2025-01-22T14:54:32.527Z] Checked if tokens are valid: true, expires at: 1737560950623
-[debug] [2025-01-22T14:54:32.527Z] Checked if tokens are valid: true, expires at: 1737560950623
-[debug] [2025-01-22T14:54:32.528Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/gopharma-230d7/sites pageToken=&pageSize=10
-[debug] [2025-01-22T14:54:34.760Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/gopharma-230d7/sites 200
-[debug] [2025-01-22T14:54:34.760Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/gopharma-230d7/sites {"sites":[{"name":"projects/gopharma-230d7/sites/gopharma-230d7","defaultUrl":"https://gopharma-230d7.web.app","appId":"1:193172513145:web:b26cc76a5f24177b644fa8","type":"DEFAULT_SITE"}]}
-[debug] [2025-01-22T14:54:34.761Z] Checked if tokens are valid: true, expires at: 1737560950623
-[debug] [2025-01-22T14:54:34.761Z] Checked if tokens are valid: true, expires at: 1737560950623
-[debug] [2025-01-22T14:54:34.761Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:193172513145:web:b26cc76a5f24177b644fa8/config [none]
-[debug] [2025-01-22T14:54:35.931Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:193172513145:web:b26cc76a5f24177b644fa8/config 200
-[debug] [2025-01-22T14:54:35.931Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:193172513145:web:b26cc76a5f24177b644fa8/config {"projectId":"gopharma-230d7","appId":"1:193172513145:web:b26cc76a5f24177b644fa8","storageBucket":"gopharma-230d7.firebasestorage.app","apiKey":"AIzaSyAM3FosOdo-yVaRU1jK12RbQQU3iaj4ekY","authDomain":"gopharma-230d7.firebaseapp.com","messagingSenderId":"193172513145","measurementId":"G-BLNT9V0BX3"}
+[debug] [2025-01-22T17:59:51.548Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-01-22T17:59:51.548Z] > authorizing via signed-in user (josoajuliano@gmail.com)
+[debug] [2025-01-22T17:59:51.549Z] [iam] checking project gopharma-230d7 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-01-22T17:59:51.550Z] Checked if tokens are valid: true, expires at: 1737572019496
+[debug] [2025-01-22T17:59:51.550Z] Checked if tokens are valid: true, expires at: 1737572019496
+[debug] [2025-01-22T17:59:51.551Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/gopharma-230d7:testIamPermissions [none]
+[debug] [2025-01-22T17:59:51.551Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/gopharma-230d7:testIamPermissions x-goog-quota-user=projects/gopharma-230d7
+[debug] [2025-01-22T17:59:51.552Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gopharma-230d7:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-01-22T17:59:53.645Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/gopharma-230d7:testIamPermissions 200
+[debug] [2025-01-22T17:59:53.646Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gopharma-230d7:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-01-22T17:59:53.647Z] Checked if tokens are valid: true, expires at: 1737572019496
+[debug] [2025-01-22T17:59:53.647Z] Checked if tokens are valid: true, expires at: 1737572019496
+[debug] [2025-01-22T17:59:53.648Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/gopharma-230d7 [none]
+[debug] [2025-01-22T17:59:54.549Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/gopharma-230d7 200
+[debug] [2025-01-22T17:59:54.550Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/gopharma-230d7 {"projectId":"gopharma-230d7","projectNumber":"193172513145","displayName":"GoPharma","name":"projects/gopharma-230d7","resources":{"hostingSite":"gopharma-230d7"},"state":"ACTIVE","etag":"1_d945099e-00d4-40b6-9296-edc342b143c8"}
+[debug] [2025-01-22T17:59:56.119Z] Checked if tokens are valid: true, expires at: 1737572019496
+[debug] [2025-01-22T17:59:56.119Z] Checked if tokens are valid: true, expires at: 1737572019496
+[debug] [2025-01-22T17:59:56.120Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/gopharma-230d7/sites pageToken=&pageSize=10
+[debug] [2025-01-22T17:59:58.349Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/gopharma-230d7/sites 200
+[debug] [2025-01-22T17:59:58.349Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/gopharma-230d7/sites {"sites":[{"name":"projects/gopharma-230d7/sites/gopharma-230d7","defaultUrl":"https://gopharma-230d7.web.app","appId":"1:193172513145:web:b26cc76a5f24177b644fa8","type":"DEFAULT_SITE"}]}
+[debug] [2025-01-22T17:59:58.350Z] Checked if tokens are valid: true, expires at: 1737572019496
+[debug] [2025-01-22T17:59:58.350Z] Checked if tokens are valid: true, expires at: 1737572019496
+[debug] [2025-01-22T17:59:58.350Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:193172513145:web:b26cc76a5f24177b644fa8/config [none]
+[debug] [2025-01-22T17:59:59.373Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:193172513145:web:b26cc76a5f24177b644fa8/config 200
+[debug] [2025-01-22T17:59:59.373Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:193172513145:web:b26cc76a5f24177b644fa8/config {"projectId":"gopharma-230d7","appId":"1:193172513145:web:b26cc76a5f24177b644fa8","storageBucket":"gopharma-230d7.firebasestorage.app","apiKey":"AIzaSyAM3FosOdo-yVaRU1jK12RbQQU3iaj4ekY","authDomain":"gopharma-230d7.firebaseapp.com","messagingSenderId":"193172513145","measurementId":"G-BLNT9V0BX3"}
 [info] 
    Thank you for trying our early preview of Next.js support on Firebase Hosting.
    During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
@@ -42,84 +42,11 @@
 
    We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
 
-[debug] [2025-01-22T14:54:39.466Z] Checked if tokens are valid: true, expires at: 1737560950623
-[debug] [2025-01-22T14:54:39.466Z] Checked if tokens are valid: true, expires at: 1737560950623
-[debug] [2025-01-22T14:54:39.466Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/gopharma-230d7/sites/gopharma-230d7 [none]
-[debug] [2025-01-22T14:54:41.636Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/gopharma-230d7/sites/gopharma-230d7 200
-[debug] [2025-01-22T14:54:41.637Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/gopharma-230d7/sites/gopharma-230d7 {"name":"projects/gopharma-230d7/sites/gopharma-230d7","defaultUrl":"https://gopharma-230d7.web.app","appId":"1:193172513145:web:b26cc76a5f24177b644fa8","type":"DEFAULT_SITE"}
-[info]    ▲ Next.js 15.1.6
-
-[info] 
-
-[info]    Creating an optimized production build ...
-
-[info]  ✓ Compiled successfully
-
-[info]    Linting and checking validity of types ...
-
-[info] 
-Failed to compile.
-
-[info] 
-./lib/firebase.config.ts
-6:3  Error: 'addDoc' is defined but never used.  @typescript-eslint/no-unused-vars
-9:3  Error: 'deleteDoc' is defined but never used.  @typescript-eslint/no-unused-vars
-76:19  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-
-info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
-
-[debug] [2025-01-22T14:54:56.041Z] Error: ENOENT: no such file or directory, open '/home/juliano/Documents/Projects/NextJS/gopharma/.next/export-marker.json'
-[error] 
-[error] Error: An unexpected error has occurred.
-[debug] [2025-01-22T14:56:48.055Z] ----------------------------------------------------------------------
-[debug] [2025-01-22T14:56:48.057Z] Command:       /usr/bin/node /usr/local/bin/firebase deploy
-[debug] [2025-01-22T14:56:48.057Z] CLI Version:   13.29.1
-[debug] [2025-01-22T14:56:48.057Z] Platform:      linux
-[debug] [2025-01-22T14:56:48.057Z] Node Version:  v18.19.1
-[debug] [2025-01-22T14:56:48.058Z] Time:          Wed Jan 22 2025 17:56:48 GMT+0300 (East Africa Time)
-[debug] [2025-01-22T14:56:48.058Z] ----------------------------------------------------------------------
-[debug] 
-[debug] [2025-01-22T14:56:48.111Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2025-01-22T14:56:48.111Z] > authorizing via signed-in user (josoajuliano@gmail.com)
-[debug] [2025-01-22T14:56:48.111Z] [iam] checking project gopharma-230d7 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
-[debug] [2025-01-22T14:56:48.112Z] Checked if tokens are valid: true, expires at: 1737560950623
-[debug] [2025-01-22T14:56:48.113Z] Checked if tokens are valid: true, expires at: 1737560950623
-[debug] [2025-01-22T14:56:48.113Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/gopharma-230d7:testIamPermissions [none]
-[debug] [2025-01-22T14:56:48.114Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/gopharma-230d7:testIamPermissions x-goog-quota-user=projects/gopharma-230d7
-[debug] [2025-01-22T14:56:48.114Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gopharma-230d7:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
-[debug] [2025-01-22T14:56:49.890Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/gopharma-230d7:testIamPermissions 200
-[debug] [2025-01-22T14:56:49.891Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gopharma-230d7:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
-[debug] [2025-01-22T14:56:49.891Z] Checked if tokens are valid: true, expires at: 1737560950623
-[debug] [2025-01-22T14:56:49.891Z] Checked if tokens are valid: true, expires at: 1737560950623
-[debug] [2025-01-22T14:56:49.892Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/gopharma-230d7 [none]
-[debug] [2025-01-22T14:56:50.636Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/gopharma-230d7 200
-[debug] [2025-01-22T14:56:50.637Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/gopharma-230d7 {"projectId":"gopharma-230d7","projectNumber":"193172513145","displayName":"GoPharma","name":"projects/gopharma-230d7","resources":{"hostingSite":"gopharma-230d7"},"state":"ACTIVE","etag":"1_d945099e-00d4-40b6-9296-edc342b143c8"}
-[debug] [2025-01-22T14:56:52.141Z] Checked if tokens are valid: true, expires at: 1737560950623
-[debug] [2025-01-22T14:56:52.142Z] Checked if tokens are valid: true, expires at: 1737560950623
-[debug] [2025-01-22T14:56:52.142Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/gopharma-230d7/sites pageToken=&pageSize=10
-[debug] [2025-01-22T14:56:54.148Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/gopharma-230d7/sites 200
-[debug] [2025-01-22T14:56:54.148Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/gopharma-230d7/sites {"sites":[{"name":"projects/gopharma-230d7/sites/gopharma-230d7","defaultUrl":"https://gopharma-230d7.web.app","appId":"1:193172513145:web:b26cc76a5f24177b644fa8","type":"DEFAULT_SITE"}]}
-[debug] [2025-01-22T14:56:54.149Z] Checked if tokens are valid: true, expires at: 1737560950623
-[debug] [2025-01-22T14:56:54.149Z] Checked if tokens are valid: true, expires at: 1737560950623
-[debug] [2025-01-22T14:56:54.149Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:193172513145:web:b26cc76a5f24177b644fa8/config [none]
-[debug] [2025-01-22T14:56:55.384Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:193172513145:web:b26cc76a5f24177b644fa8/config 200
-[debug] [2025-01-22T14:56:55.384Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:193172513145:web:b26cc76a5f24177b644fa8/config {"projectId":"gopharma-230d7","appId":"1:193172513145:web:b26cc76a5f24177b644fa8","storageBucket":"gopharma-230d7.firebasestorage.app","apiKey":"AIzaSyAM3FosOdo-yVaRU1jK12RbQQU3iaj4ekY","authDomain":"gopharma-230d7.firebaseapp.com","messagingSenderId":"193172513145","measurementId":"G-BLNT9V0BX3"}
-[info] 
-   Thank you for trying our early preview of Next.js support on Firebase Hosting.
-   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
-   The integration is known to work with Next.js version 12 - 15.0. You may encounter errors.
-
-   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
-   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
-   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
-
-   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
-
-[debug] [2025-01-22T14:56:58.893Z] Checked if tokens are valid: true, expires at: 1737560950623
-[debug] [2025-01-22T14:56:58.893Z] Checked if tokens are valid: true, expires at: 1737560950623
-[debug] [2025-01-22T14:56:58.893Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/gopharma-230d7/sites/gopharma-230d7 [none]
-[debug] [2025-01-22T14:57:00.950Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/gopharma-230d7/sites/gopharma-230d7 200
-[debug] [2025-01-22T14:57:00.950Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/gopharma-230d7/sites/gopharma-230d7 {"name":"projects/gopharma-230d7/sites/gopharma-230d7","defaultUrl":"https://gopharma-230d7.web.app","appId":"1:193172513145:web:b26cc76a5f24177b644fa8","type":"DEFAULT_SITE"}
+[debug] [2025-01-22T18:00:02.991Z] Checked if tokens are valid: true, expires at: 1737572019496
+[debug] [2025-01-22T18:00:02.991Z] Checked if tokens are valid: true, expires at: 1737572019496
+[debug] [2025-01-22T18:00:02.991Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/gopharma-230d7/sites/gopharma-230d7 [none]
+[debug] [2025-01-22T18:00:05.069Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/gopharma-230d7/sites/gopharma-230d7 200
+[debug] [2025-01-22T18:00:05.069Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/gopharma-230d7/sites/gopharma-230d7 {"name":"projects/gopharma-230d7/sites/gopharma-230d7","defaultUrl":"https://gopharma-230d7.web.app","appId":"1:193172513145:web:b26cc76a5f24177b644fa8","type":"DEFAULT_SITE"}
 [info]    ▲ Next.js 15.1.6
 
 [info] 
@@ -134,160 +61,43 @@ info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/d
 Failed to compile.
 
 ./lib/firebase.config.ts
-74:19  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+69:19  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
 
 info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
 
-[debug] [2025-01-22T14:57:08.627Z] Error: ENOENT: no such file or directory, open '/home/juliano/Documents/Projects/NextJS/gopharma/.next/export-marker.json'
+[debug] [2025-01-22T18:00:13.094Z] Error: ENOENT: no such file or directory, open '/home/juliano/Documents/Projects/NextJS/gopharma/.next/export-marker.json'
 [error] 
 [error] Error: An unexpected error has occurred.
-[debug] [2025-01-22T14:58:18.181Z] ----------------------------------------------------------------------
-[debug] [2025-01-22T14:58:18.183Z] Command:       /usr/bin/node /usr/local/bin/firebase deploy
-[debug] [2025-01-22T14:58:18.183Z] CLI Version:   13.29.1
-[debug] [2025-01-22T14:58:18.183Z] Platform:      linux
-[debug] [2025-01-22T14:58:18.183Z] Node Version:  v18.19.1
-[debug] [2025-01-22T14:58:18.184Z] Time:          Wed Jan 22 2025 17:58:18 GMT+0300 (East Africa Time)
-[debug] [2025-01-22T14:58:18.184Z] ----------------------------------------------------------------------
+[debug] [2025-01-22T18:04:16.275Z] ----------------------------------------------------------------------
+[debug] [2025-01-22T18:04:16.277Z] Command:       /usr/bin/node /usr/local/bin/firebase deploy
+[debug] [2025-01-22T18:04:16.277Z] CLI Version:   13.29.1
+[debug] [2025-01-22T18:04:16.278Z] Platform:      linux
+[debug] [2025-01-22T18:04:16.278Z] Node Version:  v18.19.1
+[debug] [2025-01-22T18:04:16.278Z] Time:          Wed Jan 22 2025 21:04:16 GMT+0300 (East Africa Time)
+[debug] [2025-01-22T18:04:16.278Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2025-01-22T14:58:18.236Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2025-01-22T14:58:18.236Z] > authorizing via signed-in user (josoajuliano@gmail.com)
-[debug] [2025-01-22T14:58:18.236Z] [iam] checking project gopharma-230d7 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
-[debug] [2025-01-22T14:58:18.237Z] Checked if tokens are valid: true, expires at: 1737560950623
-[debug] [2025-01-22T14:58:18.237Z] Checked if tokens are valid: true, expires at: 1737560950623
-[debug] [2025-01-22T14:58:18.238Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/gopharma-230d7:testIamPermissions [none]
-[debug] [2025-01-22T14:58:18.238Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/gopharma-230d7:testIamPermissions x-goog-quota-user=projects/gopharma-230d7
-[debug] [2025-01-22T14:58:18.239Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gopharma-230d7:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
-[debug] [2025-01-22T14:58:20.021Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/gopharma-230d7:testIamPermissions 200
-[debug] [2025-01-22T14:58:20.021Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gopharma-230d7:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
-[debug] [2025-01-22T14:58:20.021Z] Checked if tokens are valid: true, expires at: 1737560950623
-[debug] [2025-01-22T14:58:20.021Z] Checked if tokens are valid: true, expires at: 1737560950623
-[debug] [2025-01-22T14:58:20.022Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/gopharma-230d7 [none]
-[debug] [2025-01-22T14:58:21.068Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/gopharma-230d7 200
-[debug] [2025-01-22T14:58:21.068Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/gopharma-230d7 {"projectId":"gopharma-230d7","projectNumber":"193172513145","displayName":"GoPharma","name":"projects/gopharma-230d7","resources":{"hostingSite":"gopharma-230d7"},"state":"ACTIVE","etag":"1_d945099e-00d4-40b6-9296-edc342b143c8"}
-[debug] [2025-01-22T14:58:22.622Z] Checked if tokens are valid: true, expires at: 1737560950623
-[debug] [2025-01-22T14:58:22.622Z] Checked if tokens are valid: true, expires at: 1737560950623
-[debug] [2025-01-22T14:58:22.623Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/gopharma-230d7/sites pageToken=&pageSize=10
-[debug] [2025-01-22T14:58:24.677Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/gopharma-230d7/sites 200
-[debug] [2025-01-22T14:58:24.677Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/gopharma-230d7/sites {"sites":[{"name":"projects/gopharma-230d7/sites/gopharma-230d7","defaultUrl":"https://gopharma-230d7.web.app","appId":"1:193172513145:web:b26cc76a5f24177b644fa8","type":"DEFAULT_SITE"}]}
-[debug] [2025-01-22T14:58:24.677Z] Checked if tokens are valid: true, expires at: 1737560950623
-[debug] [2025-01-22T14:58:24.677Z] Checked if tokens are valid: true, expires at: 1737560950623
-[debug] [2025-01-22T14:58:24.677Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:193172513145:web:b26cc76a5f24177b644fa8/config [none]
-[debug] [2025-01-22T14:58:25.843Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:193172513145:web:b26cc76a5f24177b644fa8/config 200
-[debug] [2025-01-22T14:58:25.843Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:193172513145:web:b26cc76a5f24177b644fa8/config {"projectId":"gopharma-230d7","appId":"1:193172513145:web:b26cc76a5f24177b644fa8","storageBucket":"gopharma-230d7.firebasestorage.app","apiKey":"AIzaSyAM3FosOdo-yVaRU1jK12RbQQU3iaj4ekY","authDomain":"gopharma-230d7.firebaseapp.com","messagingSenderId":"193172513145","measurementId":"G-BLNT9V0BX3"}
-[info] 
-   Thank you for trying our early preview of Next.js support on Firebase Hosting.
-   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
-   The integration is known to work with Next.js version 12 - 15.0. You may encounter errors.
-
-   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
-   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
-   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
-
-   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
-
-[debug] [2025-01-22T14:58:29.462Z] Checked if tokens are valid: true, expires at: 1737560950623
-[debug] [2025-01-22T14:58:29.462Z] Checked if tokens are valid: true, expires at: 1737560950623
-[debug] [2025-01-22T14:58:29.462Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/gopharma-230d7/sites/gopharma-230d7 [none]
-[debug] [2025-01-22T14:58:31.269Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/gopharma-230d7/sites/gopharma-230d7 200
-[debug] [2025-01-22T14:58:31.269Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/gopharma-230d7/sites/gopharma-230d7 {"name":"projects/gopharma-230d7/sites/gopharma-230d7","defaultUrl":"https://gopharma-230d7.web.app","appId":"1:193172513145:web:b26cc76a5f24177b644fa8","type":"DEFAULT_SITE"}
-[info]    ▲ Next.js 15.1.6
-
-[info] 
-
-[info]    Creating an optimized production build ...
-
-[info]  ✓ Compiled successfully
-
-[info]    Linting and checking validity of types ...
-
-[info] Failed to compile.
-
-
-[info] ./lib/firebase.config.ts:79:21
-Type error: Argument of type '{ id: string; }' is not assignable to parameter of type 'Product'.
-  Type '{ id: string; }' is missing the following properties from type 'Product': code, name, quantity
-
-  77 |     const querySnapshot = await getDocs(collection(db, "Medicament"));
-  78 |     querySnapshot.forEach((doc) => {
-> 79 |       products.push({ id: doc.id, ...doc.data() });
-     |                     ^
-  80 |     });
-  81 |     return products;
-  82 |   } catch (error) {
-
-[info] Static worker exited with code: 1 and signal: null
-
-[debug] [2025-01-22T14:58:39.147Z] Error: ENOENT: no such file or directory, open '/home/juliano/Documents/Projects/NextJS/gopharma/.next/export-marker.json'
-[error] 
-[error] Error: An unexpected error has occurred.
-[debug] [2025-01-22T15:02:36.631Z] ----------------------------------------------------------------------
-[debug] [2025-01-22T15:02:36.632Z] Command:       /usr/bin/node /usr/local/bin/firebase deploy
-[debug] [2025-01-22T15:02:36.633Z] CLI Version:   13.29.1
-[debug] [2025-01-22T15:02:36.633Z] Platform:      linux
-[debug] [2025-01-22T15:02:36.633Z] Node Version:  v18.19.1
-[debug] [2025-01-22T15:02:36.633Z] Time:          Wed Jan 22 2025 18:02:36 GMT+0300 (East Africa Time)
-[debug] [2025-01-22T15:02:36.634Z] ----------------------------------------------------------------------
-[debug] 
-[debug] [2025-01-22T15:02:36.690Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2025-01-22T15:02:36.691Z] > authorizing via signed-in user (josoajuliano@gmail.com)
-[debug] [2025-01-22T15:02:36.691Z] [iam] checking project gopharma-230d7 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
-[debug] [2025-01-22T15:02:36.692Z] Checked if tokens are valid: true, expires at: 1737560950623
-[debug] [2025-01-22T15:02:36.692Z] Checked if tokens are valid: true, expires at: 1737560950623
-[debug] [2025-01-22T15:02:36.694Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/gopharma-230d7:testIamPermissions [none]
-[debug] [2025-01-22T15:02:36.694Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/gopharma-230d7:testIamPermissions x-goog-quota-user=projects/gopharma-230d7
-[debug] [2025-01-22T15:02:36.694Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gopharma-230d7:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
-[debug] [2025-01-22T15:02:38.759Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/gopharma-230d7:testIamPermissions 200
-[debug] [2025-01-22T15:02:38.759Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gopharma-230d7:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
-[debug] [2025-01-22T15:02:38.760Z] Checked if tokens are valid: true, expires at: 1737560950623
-[debug] [2025-01-22T15:02:38.760Z] Checked if tokens are valid: true, expires at: 1737560950623
-[debug] [2025-01-22T15:02:38.760Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/gopharma-230d7 [none]
-[debug] [2025-01-22T15:02:39.630Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/gopharma-230d7 200
-[debug] [2025-01-22T15:02:39.630Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/gopharma-230d7 {"projectId":"gopharma-230d7","projectNumber":"193172513145","displayName":"GoPharma","name":"projects/gopharma-230d7","resources":{"hostingSite":"gopharma-230d7"},"state":"ACTIVE","etag":"1_d945099e-00d4-40b6-9296-edc342b143c8"}
-[debug] [2025-01-22T15:02:41.144Z] Checked if tokens are valid: true, expires at: 1737560950623
-[debug] [2025-01-22T15:02:41.144Z] Checked if tokens are valid: true, expires at: 1737560950623
-[debug] [2025-01-22T15:02:41.144Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/gopharma-230d7/sites pageToken=&pageSize=10
-[debug] [2025-01-22T15:02:43.725Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/gopharma-230d7/sites 200
-[debug] [2025-01-22T15:02:43.725Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/gopharma-230d7/sites {"sites":[{"name":"projects/gopharma-230d7/sites/gopharma-230d7","defaultUrl":"https://gopharma-230d7.web.app","appId":"1:193172513145:web:b26cc76a5f24177b644fa8","type":"DEFAULT_SITE"}]}
-[debug] [2025-01-22T15:02:43.726Z] Checked if tokens are valid: true, expires at: 1737560950623
-[debug] [2025-01-22T15:02:43.726Z] Checked if tokens are valid: true, expires at: 1737560950623
-[debug] [2025-01-22T15:02:43.726Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:193172513145:web:b26cc76a5f24177b644fa8/config [none]
-[debug] [2025-01-22T15:02:45.352Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:193172513145:web:b26cc76a5f24177b644fa8/config 200
-[debug] [2025-01-22T15:02:45.352Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:193172513145:web:b26cc76a5f24177b644fa8/config {"projectId":"gopharma-230d7","appId":"1:193172513145:web:b26cc76a5f24177b644fa8","storageBucket":"gopharma-230d7.firebasestorage.app","apiKey":"AIzaSyAM3FosOdo-yVaRU1jK12RbQQU3iaj4ekY","authDomain":"gopharma-230d7.firebaseapp.com","messagingSenderId":"193172513145","measurementId":"G-BLNT9V0BX3"}
-[info] 
-   Thank you for trying our early preview of Next.js support on Firebase Hosting.
-   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
-   The integration is known to work with Next.js version 12 - 15.0. You may encounter errors.
-
-   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
-   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
-   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
-
-   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
-
-[debug] [2025-01-22T15:02:48.928Z] Checked if tokens are valid: true, expires at: 1737560950623
-[debug] [2025-01-22T15:02:48.928Z] Checked if tokens are valid: true, expires at: 1737560950623
-[debug] [2025-01-22T15:02:48.929Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/gopharma-230d7/sites/gopharma-230d7 [none]
-[debug] [2025-01-22T15:02:50.996Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/gopharma-230d7/sites/gopharma-230d7 200
-[debug] [2025-01-22T15:02:50.996Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/gopharma-230d7/sites/gopharma-230d7 {"name":"projects/gopharma-230d7/sites/gopharma-230d7","defaultUrl":"https://gopharma-230d7.web.app","appId":"1:193172513145:web:b26cc76a5f24177b644fa8","type":"DEFAULT_SITE"}
-[info]    ▲ Next.js 15.1.6
-
-[info] 
-
-[info]    Creating an optimized production build ...
-
-[info]  ✓ Compiled successfully
-
-[info]    Linting and checking validity of types ...
-
-[info] 
-Failed to compile.
-
-./lib/firebase.config.ts
-74:19  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
-
-info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
-
-[debug] [2025-01-22T15:02:58.433Z] Error: ENOENT: no such file or directory, open '/home/juliano/Documents/Projects/NextJS/gopharma/.next/export-marker.json'
-[error] 
-[error] Error: An unexpected error has occurred.
-                               
+[debug] [2025-01-22T18:04:16.329Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-01-22T18:04:16.330Z] > authorizing via signed-in user (josoajuliano@gmail.com)
+[debug] [2025-01-22T18:04:16.330Z] [iam] checking project gopharma-230d7 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-01-22T18:04:16.331Z] Checked if tokens are valid: true, expires at: 1737572019496
+[debug] [2025-01-22T18:04:16.331Z] Checked if tokens are valid: true, expires at: 1737572019496
+[debug] [2025-01-22T18:04:16.332Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/gopharma-230d7:testIamPermissions [none]
+[debug] [2025-01-22T18:04:16.332Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/gopharma-230d7:testIamPermissions x-goog-quota-user=projects/gopharma-230d7
+[debug] [2025-01-22T18:04:16.332Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gopharma-230d7:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-01-22T18:04:18.367Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/gopharma-230d7:testIamPermissions 200
+[debug] [2025-01-22T18:04:18.367Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/gopharma-230d7:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-01-22T18:04:18.368Z] Checked if tokens are valid: true, expires at: 1737572019496
+[debug] [2025-01-22T18:04:18.368Z] Checked if tokens are valid: true, expires at: 1737572019496
+[debug] [2025-01-22T18:04:18.369Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/gopharma-230d7 [none]
+[debug] [2025-01-22T18:04:19.284Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/gopharma-230d7 200
+[debug] [2025-01-22T18:04:19.284Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/gopharma-230d7 {"projectId":"gopharma-230d7","projectNumber":"193172513145","displayName":"GoPharma","name":"projects/gopharma-230d7","resources":{"hostingSite":"gopharma-230d7"},"state":"ACTIVE","etag":"1_d945099e-00d4-40b6-9296-edc342b143c8"}
+[debug] [2025-01-22T18:04:20.885Z] Checked if tokens are valid: true, expires at: 1737572019496
+[debug] [2025-01-22T18:04:20.885Z] Checked if tokens are valid: true, expires at: 1737572019496
+[debug] [2025-01-22T18:04:20.886Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/gopharma-230d7/sites pageToken=&pageSize=10
+[debug] [2025-01-22T18:04:22.969Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/gopharma-230d7/sites 200
+[debug] [2025-01-22T18:04:22.969Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/gopharma-230d7/sites {"sites":[{"name":"projects/gopharma-230d7/sites/gopharma-230d7","defaultUrl":"https://gopharma-230d7.web.app","appId":"1:193172513145:web:b26cc76a5f24177b644fa8","type":"DEFAULT_SITE"}]}
+[debug] [2025-01-22T18:04:22.970Z] Checked if tokens are valid: true, expires at: 1737572019496
+[debug] [2025-01-22T18:04:22.970Z] Checked if tokens are valid: true, expires at: 1737572019496
+[debug] [2025-01-22T18:04:22.970Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:193172513145:web:b26cc76a5f24177b644fa8/config [none]
+[debug] [2025-01-22T18:04:24.199Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:193172513145:web:b26cc76a5f24177b644fa8/config 200
+[debug] [2025-01-22T18:04:24.199Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/-/webApps/1:193172513145:web:b26cc76a5f24177b644fa8/config {"projectId":"gopharma-230d7","appId":"1:193172513145:web:b26cc76a5f24177b644fa8","storageBucket":"gopharma-230d7.firebasestorage.app","apiKey":"AIzaSyAM3FosOdo-yVaRU1jK12RbQQU3iaj4ekY","authDomain":"gopharma-230d7.firebaseapp.com","messagingSenderId":"193172513145","measurementId":"G-BLNT9V0BX3"}
