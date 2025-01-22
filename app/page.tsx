@@ -48,9 +48,9 @@ export default function Home() {
       console.log("Ajout nouvouea produit", { ...product, isActive: true });
       const newProduct = { ...product, isActive: true };
       const addedProduct = await addProduct(newProduct);
-      setModalOpen(false);
-      setEditProduct(null);
     }
+    setModalOpen(false);
+    setEditProduct(null);
     console.log("Fetching products...");
     await fetchProducts();
   };
