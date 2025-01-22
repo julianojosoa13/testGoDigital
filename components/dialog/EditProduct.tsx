@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { JSX, useState } from "react";
 import Button from "@/components/ui/Button";
 
 interface Product {
@@ -12,7 +12,7 @@ interface ModalProps {
   action: "nouveau" | "modifier";
   product?: Product;
   onClose: () => void;
-  onSave: (data: Product) => Promise<void>;
+  onSave: (data: Product) => Promise<JSX.Element>;
 }
 
 const EditProduct: React.FC<ModalProps> = ({
@@ -42,9 +42,15 @@ const EditProduct: React.FC<ModalProps> = ({
     setQuantity((prev) => Math.max(0, prev + delta));
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e: any) => {
+    e.preventDefault();
     if (action === "nouveau" || (action === "modifier" && !isUnchanged)) {
-      const newProduct = { code, name, quantity, id: "" };
+      const newProduct = {
+        code,
+        name,
+        quantity,
+        id: product ? product.id : "",
+      };
       console.log("Product Dialog :>> ", newProduct);
       onSave(newProduct);
     }

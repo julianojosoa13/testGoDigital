@@ -63,12 +63,12 @@ const ProductList: React.FC<ProductListProps> = ({
               </td>
               <td className="border border-gray-300 px-4 py-2 flex gap-2 justify-center items-center">
                 <Button
-                  title="Modifier"
+                  title="Modifier ✏️"
                   type="secondary"
                   onClick={() => onEdit(product)}
                 />
                 <Button
-                  title="Supprimer"
+                  title="Supprimer 🗑️"
                   type="primary"
                   onClick={() => onDelete(product.id)}
                 />

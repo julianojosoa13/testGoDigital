@@ -6,7 +6,8 @@ import {
   addProduct,
   deleteProduct,
   getAllProducts,
-} from "@/lib/firebase.actions";
+  modifyProduct,
+} from "@/lib/firebase.config";
 import { useState, useEffect } from "react";
 
 interface Product {
@@ -22,12 +23,11 @@ export default function Home() {
   const [editProduct, setEditProduct] = useState<Product | null>(null);
   const [products, setProducts] = useState<Product[]>([]);
 
-  // Fetch products from the database
   const fetchProducts = async () => {
     const fetchedProducts = await getAllProducts();
     const activeProducts = fetchedProducts.filter(
       (product: Product) => product.isActive !== false
-    ); // Filter for active products only
+    );
     setProducts(activeProducts);
   };
 
@@ -37,58 +37,66 @@ export default function Home() {
 
   const handleSave = async (product: Product) => {
     if (editProduct) {
-      // Update product logic
-      const updatedProduct = { ...editProduct, ...product };
-      await addProduct(updatedProduct); // Assuming `addProduct` also updates when `id` exists
+      console.log("modif produit", product);
+      await modifyProduct(product.id, {
+        code: product.code,
+        name: product.name,
+        quantity: product.quantity,
+        isActive: true,
+      });
     } else {
-      // Add new product logic
+      console.log("Ajout nouvouea produit", { ...product, isActive: true });
       const newProduct = { ...product, isActive: true };
-      await addProduct(newProduct);
+      const addedProduct = await addProduct(newProduct);
+      setModalOpen(false);
+      setEditProduct(null);
+
+      console.log("Fetching products...");
+      await fetchProducts();
     }
-    setModalOpen(false);
-    setEditProduct(null);
-    await fetchProducts(); // Refresh the product list after saving
-  };
 
-  const handleEdit = (product: Product) => {
-    setEditProduct(product);
-    setModalOpen(true);
-  };
+    const handleEdit = (product: Product) => {
+      console.log(">> Editing product...", product);
+      setEditProduct(product);
+      setModalOpen(true);
+    };
 
-  const handleDelete = async (productId: string) => {
-    await deleteProduct(productId); // Mark product as inactive
-    await fetchProducts(); // Refresh product list after deletion
-  };
+    const handleDelete = async (productId: string) => {
+      await deleteProduct(productId);
+      await fetchProducts();
+    };
 
-  return (
-    <div>
-      <main className="flex flex-1 w-screen h-screen flex-col">
-        <h1 className="text-center font-bold text-3xl">GoPharma</h1>
-        <div className="p-4 rounded-md border-solid border-1 bg-slate-100 m-4 flex flex-1 flex-col gap-4">
-          <h2 className="text-lg font-semibold text-yellow-500">Bienvenue</h2>
-          <Button
-            title="Nouveau ➕"
-            onClick={() => {
-              setEditProduct(null); // Reset to null for new product
-              setModalOpen(true);
-            }}
-            type="primary"
-          />
-          <ProductList
-            products={products}
-            onEdit={handleEdit}
-            onDelete={handleDelete}
-          />
-          {isModalOpen && (
-            <EditProduct
-              action={editProduct ? "modifier" : "nouveau"}
-              product={editProduct || undefined}
-              onSave={(product: Product) => handleSave(product)}
-              onClose={() => setModalOpen(false)}
+    return (
+      <div>
+        <main className="flex flex-1 w-screen h-screen flex-col">
+          <h1 className="text-center font-bold text-3xl">GoPharma</h1>
+          <div className="p-4 rounded-md border-solid border-1 bg-slate-100 m-4 flex flex-1 flex-col gap-4">
+            <h2 className="text-lg font-semibold text-yellow-500">Bienvenue</h2>
+            <Button
+              title="Nouveau ➕"
+              onClick={() => {
+                setEditProduct(null);
+                setModalOpen(true);
+                console.log("Nouveau produit >> ", editProduct);
+              }}
+              type="primary"
             />
-          )}
-        </div>
-      </main>
-    </div>
-  );
+            <ProductList
+              products={products}
+              onEdit={handleEdit}
+              onDelete={handleDelete}
+            />
+            {isModalOpen && (
+              <EditProduct
+                action={editProduct ? "modifier" : "nouveau"}
+                product={editProduct || undefined}
+                onSave={(product: Product) => handleSave(product)}
+                onClose={() => setModalOpen(false)}
+              />
+            )}
+          </div>
+        </main>
+      </div>
+    );
+  };
 }

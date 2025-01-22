@@ -3,7 +3,7 @@
 import React from "react";
 
 interface ButtonProps {
-  onClick: () => void;
+  onClick: (e: any) => void;
   title: string;
   type: "primary" | "secondary";
 }
@@ -17,7 +17,7 @@ const Button: React.FC<ButtonProps> = ({ onClick, title, type }) => {
 
   return (
     <button
-      onClick={onClick}
+      onClick={(e: any) => onClick(e)}
       className={`${baseStyles} ${buttonStyles} h-11 w-52`}
     >
       {title}
